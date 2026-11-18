@@ -1,35 +1,35 @@
-# Prompt pour écrire donnees/test.csv
+# Prompt for writing donnees/test.csv
 
-À coller dans une IA en joignant **uniquement** `donnees/ontologie.yaml`.
-Ne jamais lui donner `train.csv` ni `validation.csv`, et ne pas les lire soi-même.
+Paste into an AI, attaching **only** `donnees/ontologie.yaml`.
+Never give it `train.csv` or `validation.csv`, and do not read them yourself.
 
 ```
-Tu vas écrire le jeu de TEST d'un petit modèle NLU. Je joins le fichier ontologie.yaml : c'est la seule chose que tu dois utiliser. Le domaine : un assistant de réservation de terrains de football au Liban.
+You are writing the TEST set for a small NLU model. I am attaching ontologie.yaml: it is the only thing you may use. The domain: an English-speaking assistant for booking football pitches in Lebanon.
 
-Écris un fichier CSV en français, séparé par des points-virgules, avec exactement l'en-tête :
+Write a CSV file, semicolon-separated, with exactly this header:
 phrase;reponse
 
-Format de la colonne reponse :
-intention | slot=valeur | slot=valeur
-- intention : une des 8 intentions de l'ontologie, rien d'autre.
-- slots : seulement ceux de l'ontologie, dans l'ordre où l'ontologie les liste, seulement ceux présents dans la phrase.
-- valeur : recopiée EXACTEMENT de la phrase, en minuscules, sans article au début (le, la, les, un, une, des, l'). Ne normalise rien : « 20h » reste 20h, « demain » reste demain, « Beyrouth » devient beyrouth. Pas de « à » ni « pour » dans la valeur.
-- hors_domaine n'a jamais de slot.
-- Applique l'ordre de décision écrit en commentaire en haut de l'ontologie pour choisir l'intention.
+Format of the reponse column:
+intention | slot=value | slot=value
+- intention: one of the 8 intentions in the ontology, nothing else. Keep the names exactly as written (they are French words, that is expected).
+- slots: only those in the ontology, in the order the ontology lists them, only the ones present in the message.
+- value: copied EXACTLY from the message, lowercased, without a leading article (the, a, an). Normalise nothing: "8 PM" stays 8 pm, "tomorrow" stays tomorrow, "Beirut" becomes beirut. No "at", "on" or "for" in the value.
+- hors_domaine never has a slot.
+- Use the decision order written in the comment at the top of the ontology to choose the intention.
 
-Exemple de forme (inventé, ne le réutilise pas) :
-réserve Futsal Horizon jeudi à 21h;reserver_terrain | nom_terrain=futsal horizon | date=jeudi | heure=21h
+Example of the shape (made up, do not reuse it):
+book Futsal Horizon on Thursday at 9 pm;reserver_terrain | nom_terrain=futsal horizon | date=thursday | heure=9 pm
 
-Contenu :
-- 3 phrases par intention, donc 24 lignes (4 pour hors_domaine si tu veux, 25 au total).
-- Des phrases comme un vrai utilisateur les taperait sur son téléphone : courtes (moins de 300 caractères), registres variés (poli, familier, sans ponctuation, avec une faute de frappe légère), verbes et tournures variés.
-- Varie les valeurs : invente tes propres noms de complexes de foot (fictifs), utilise des villes et quartiers libanais variés, des heures, des durées et des dates différentes.
-- Pour hors_domaine, mets au moins une phrase qui ressemble à une demande de réservation mais qui n'est pas supportée (déplacer une réservation, prolonger un match, liste d'attente, remboursement…).
-- Aucune donnée personnelle (pas de vrai nom, de numéro, d'adresse précise).
-- Aucun point-virgule dans les phrases.
+Content:
+- 3 messages per intention, so 24 lines (4 for hors_domaine if you like, 25 in total).
+- Messages in English, the way a real user would type them on a phone: short (under 300 characters), varied tone (polite, casual, no punctuation, a light typo), varied verbs and phrasings.
+- Vary the values: invent your own (fictional) football venue names, use varied Lebanese cities and areas, different times, lengths and dates.
+- For hors_domaine, include at least one message that looks like a booking request but is not supported (moving a booking, extending a match, waiting list, refund...).
+- No personal data (no real names, phone numbers or precise addresses).
+- No semicolons inside the messages.
 
-Ensuite, relis chaque ligne et vérifie : l'intention est-elle la seule possible ? chaque valeur apparaît-elle mot pour mot dans la phrase ? Corrige, puis donne-moi le CSV final dans un bloc de code, sans commentaire.
+Then re-read every line and check: is that intention the only possible one? Does every value appear word for word in the message? Fix anything wrong, then give me the final CSV in a code block, with no comments.
 ```
 
-Enregistrer le résultat dans `donnees/test.csv`, lancer `make valider`, puis ne
-plus l'ouvrir avant `make juger`.
+Save the result as `donnees/test.csv`, run `make valider`, then do not open it
+again until `make juger`.

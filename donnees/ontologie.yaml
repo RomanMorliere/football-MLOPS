@@ -1,37 +1,38 @@
-# Ontologie : assistant de réservation de terrains de football (Foot 7joz, Liban)
-# Format de sortie : intention | slot=valeur | slot=valeur
-# Règles d'annotation :
-#   - la valeur d'un slot est recopiée du message, en minuscules, sans article ;
-#   - les slots sont écrits dans l'ordre de la liste ci-dessous, seulement ceux présents ;
-#   - hors_domaine n'a jamais de slot.
-# Ordre de décision (pour que deux personnes choisissent la même étiquette) :
-#   1. le message parle d'une réservation que j'ai DÉJÀ faite ?
-#        paiement -> changer_paiement ; annulation -> annuler_reservation ;
-#        changer l'heure, la durée ou le terrain -> hors_domaine ; sinon -> consulter_reservations
-#   2. il demande de réserver -> reserver_terrain (même s'il parle aussi de prix)
-#   3. il demande un prix, le moins cher -> demander_prix
-#   4. il demande si c'est libre, quels créneaux -> verifier_disponibilite
-#   5. il cherche, liste, localise des terrains -> chercher_terrain
-#   6. sinon -> hors_domaine
+# Ontology: football pitch booking assistant (Foot 7joz, Lebanon)
+# Messages are in English. Output: intention | slot=value | slot=value
+# Annotation rules:
+#   - a slot value is copied from the message, lowercased, without a leading
+#     article (the, a, an);
+#   - slots are written in the order of the list below, only those present;
+#   - hors_domaine never has a slot.
+# Decision order (so two people pick the same intention):
+#   1. is it about a booking I ALREADY made?
+#        payment -> changer_paiement ; cancelling -> annuler_reservation ;
+#        changing time, length or court -> hors_domaine ; otherwise -> consulter_reservations
+#   2. does it ask to book or reserve -> reserver_terrain (even if it also mentions a price)
+#   3. does it ask how much, or for the cheapest -> demander_prix
+#   4. does it ask whether something is free, or which times are open -> verifier_disponibilite
+#   5. does it ask to find, list or locate pitches -> chercher_terrain
+#   6. otherwise -> hors_domaine
 
-domaine: réservation de terrains de football au Liban
+domaine: football pitch booking in Lebanon (English messages)
 
 intentions:
-  chercher_terrain: trouver ou lister des terrains par lieu, nom, type ou nombre de joueurs, sans question sur un créneau
-  verifier_disponibilite: demander si un terrain est libre ou quels créneaux restent, sans demander de réserver
-  demander_prix: demander combien coûte un terrain ou une durée, ou lequel est le moins cher
-  reserver_terrain: demander de faire une nouvelle réservation
-  consulter_reservations: voir ses propres réservations, son prochain match ou le statut d'une réservation
-  annuler_reservation: annuler une de ses propres réservations
-  changer_paiement: changer le moyen de paiement (cash ou Whish) d'une réservation existante
-  hors_domaine: tout le reste (salutations, hors sujet, déplacer ou prolonger une réservation, liste d'attente, avis, remboursement)
+  chercher_terrain: find or list pitches by place, name, type or number of players, without asking about a time slot
+  verifier_disponibilite: ask whether a pitch is free or which time slots are left, without asking to book
+  demander_prix: ask what a pitch or a match length costs, or which pitch is cheapest
+  reserver_terrain: ask to make a new booking
+  consulter_reservations: see one's own bookings, next match, or the status of a booking
+  annuler_reservation: cancel one of one's own bookings
+  changer_paiement: change how an existing booking is paid (cash or Whish)
+  hors_domaine: everything else (greetings, off-topic, moving or extending a booking, waiting list, ratings, refunds)
 
 slots:
-  ville: ville ou quartier, tel qu'écrit (beyrouth, hamra, jounieh)
-  nom_terrain: nom du complexe ou du terrain, tel qu'écrit (goal zone)
-  type_terrain: couvert ou plein air, tel qu'écrit (couvert, intérieur, en salle, extérieur, plein air)
-  nb_joueurs: nombre de joueurs, tel qu'écrit (10, 5 contre 5)
-  date: jour, tel qu'écrit (demain, vendredi, ce soir, 25 décembre)
-  heure: heure de début, telle qu'écrite (20h, 19h30)
-  duree: durée du match, telle qu'écrite (90 minutes, 1h30, deux heures)
-  paiement: moyen de paiement, tel qu'écrit (whish, cash, espèces, sur place)
+  ville: city or area, as written (beirut, hamra, jounieh)
+  nom_terrain: name of the venue or pitch, as written (goal zone)
+  type_terrain: indoor or outdoor, as written (indoor, covered, outdoor, open-air)
+  nb_joueurs: number of players, as written (10, 5-a-side)
+  date: day, as written (tomorrow, friday, tonight, december 25)
+  heure: start time, as written (8 pm, 7:30 pm)
+  duree: match length, as written (90 minutes, 1 hour, two hours)
+  paiement: payment method, as written (whish, cash, on site)

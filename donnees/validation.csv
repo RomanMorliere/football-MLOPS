@@ -1,25 +1,25 @@
 phrase;reponse
-je cherche un terrain à Baabda;chercher_terrain | ville=baabda
-quels sont les terrains en salle à Verdun;chercher_terrain | ville=verdun | type_terrain=en salle
-un terrain pour 12 joueurs près de Mansourieh;chercher_terrain | ville=mansourieh | nb_joueurs=12
-Green Park est disponible mardi à 20h30 ?;verifier_disponibilite | nom_terrain=green park | date=mardi | heure=20h30
-il reste quoi comme créneaux demain à Jbeil;verifier_disponibilite | ville=jbeil | date=demain
-Goal Zone a de la place pour deux heures jeudi soir ?;verifier_disponibilite | nom_terrain=goal zone | date=jeudi soir | duree=deux heures
-combien coûte 2h à Green Park;demander_prix | nom_terrain=green park | duree=2h
-les terrains extérieurs à Aley coûtent combien;demander_prix | ville=aley | type_terrain=extérieurs
-quel est le prix d'un match à Kick Off Club;demander_prix | nom_terrain=kick off club
-réserve Green Park mercredi à 19h pour 1h30;reserver_terrain | nom_terrain=green park | date=mercredi | heure=19h | duree=1h30
-je veux un terrain à Sour samedi à 16h, réserve-le;reserver_terrain | ville=sour | date=samedi | heure=16h
-réserve-moi Pitch 7 demain à 22h avec paiement Whish;reserver_terrain | nom_terrain=pitch 7 | date=demain | heure=22h | paiement=whish
-j'ai un match ce week-end ?;consulter_reservations | date=ce week-end
-montre-moi ma réservation à Green Park;consulter_reservations | nom_terrain=green park
-mes réservations sont confirmées ?;consulter_reservations
-annule mon match à Green Park mardi;annuler_reservation | nom_terrain=green park | date=mardi
-je veux annuler la réservation de 20h ce soir;annuler_reservation | date=ce soir | heure=20h
-annule tout pour demain;annuler_reservation | date=demain
-finalement je paie en espèces à Green Park;changer_paiement | nom_terrain=green park | paiement=espèces
-bascule mon match de jeudi sur Whish;changer_paiement | date=jeudi | paiement=whish
-je voudrais régler en liquide ma réservation de demain;changer_paiement | date=demain | paiement=liquide
-avance mon match d'une heure;hors_domaine
-c'est quoi le score du Barça;hors_domaine
-salut ça va;hors_domaine
+I'm looking for a pitch in Baabda;chercher_terrain | ville=baabda
+which indoor pitches are in Verdun;chercher_terrain | ville=verdun | type_terrain=indoor
+a pitch for 12 players near Mansourieh;chercher_terrain | ville=mansourieh | nb_joueurs=12
+is Green Park available Tuesday at 8:30 pm?;verifier_disponibilite | nom_terrain=green park | date=tuesday | heure=8:30 pm
+what slots are left tomorrow in Byblos;verifier_disponibilite | ville=byblos | date=tomorrow
+does Goal Zone have room for two hours on Thursday evening?;verifier_disponibilite | nom_terrain=goal zone | date=thursday evening | duree=two hours
+how much is 2 hours at Green Park;demander_prix | nom_terrain=green park | duree=2 hours
+how much do outdoor pitches in Aley cost;demander_prix | ville=aley | type_terrain=outdoor
+what's the price of a match at Kick Off Club;demander_prix | nom_terrain=kick off club
+book Green Park on Wednesday at 7 pm for 1h30;reserver_terrain | nom_terrain=green park | date=wednesday | heure=7 pm | duree=1h30
+I want a pitch in Tyre on Saturday at 4 pm, book it;reserver_terrain | ville=tyre | date=saturday | heure=4 pm
+reserve Pitch 7 tomorrow at 10 pm with Whish payment;reserver_terrain | nom_terrain=pitch 7 | date=tomorrow | heure=10 pm | paiement=whish
+do I have a match this weekend?;consulter_reservations | date=this weekend
+show me my booking at Green Park;consulter_reservations | nom_terrain=green park
+are my reservations confirmed?;consulter_reservations
+cancel my match at Green Park on Tuesday;annuler_reservation | nom_terrain=green park | date=tuesday
+I want to cancel the 8 pm booking tonight;annuler_reservation | date=tonight | heure=8 pm
+cancel everything for tomorrow;annuler_reservation | date=tomorrow
+actually I'll pay cash at Green Park;changer_paiement | nom_terrain=green park | paiement=cash
+switch my Thursday match to Whish;changer_paiement | date=thursday | paiement=whish
+I'd like to settle tomorrow's booking in cash;changer_paiement | date=tomorrow | paiement=cash
+bring my match forward by an hour;hors_domaine
+what's the Barcelona score;hors_domaine
+hey how are you;hors_domaine

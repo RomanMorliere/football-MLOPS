@@ -1,35 +1,38 @@
 # football-MLOPS
 
-Projet NLU (exercice « fine-tuner un modèle sur des données choisies ») : un
-assistant de réservation de terrains de football au Liban, inspiré de
-l'application Foot 7joz. Le modèle (Qwen3-0.6B + LoRA) lit un message court et
-répond `intention | slot=valeur | ...`. Il n'intègre pas l'application : on
-valide seulement le modèle.
+NLU project (exercise "fine-tune a model on data you choose"): an English
+assistant for booking football pitches in Lebanon, based on the Foot 7joz app.
+The model (Qwen3-0.6B + LoRA) reads a short message and answers
+`intention | slot=value | ...`. It is not integrated into the app: we only
+validate the model.
 
-## Contenu
+Example: `book Goal Zone on Friday at 9 pm` ->
+`reserver_terrain | nom_terrain=goal zone | date=friday | heure=9 pm`
 
-| Fichier | Rôle |
+## Contents
+
+| File | Purpose |
 |---|---|
-| `donnees/ontologie.yaml` | 8 intentions, 8 slots, règles d'annotation (figée : partie chez l'autre groupe) |
-| `donnees/train.csv` | 120 phrases, 15 par intention |
-| `donnees/validation.csv` | 24 phrases, 3 par intention |
-| `donnees/test.csv` | **à écrire par Roman**, sans regarder le train (voir `docs/prompt_test.md`) |
-| `donnees/NOTES.md` | source, licence, choix, limites, lectures du test |
+| `donnees/ontologie.yaml` | 8 intentions, 8 slots, annotation rules (frozen: goes to the other group) |
+| `donnees/train.csv` | 120 sentences, 15 per intention |
+| `donnees/validation.csv` | 24 sentences, 3 per intention |
+| `donnees/test.csv` | **written by Roman**, without looking at train (see `docs/prompt_test.md`) |
+| `donnees/NOTES.md` | source, licence, choices, limits, number of test reads |
 
-## Étapes
+## Steps
 
-1. Copier le kit de l'exercice (Makefile, `valider_donnees.py`, `importer.py`,
-   `evaluer_livrable.py`, `EXERCICE_PROJET_NLU.md`) à la racine, **sans écraser
-   `donnees/`**, puis `uv sync`.
-2. Remettre `donnees/ontologie.yaml` à l'autre groupe ; écrire leur test croisé
-   (au moins 15 phrases) et le vérifier :
+1. Copy the exercise kit (Makefile, `valider_donnees.py`, `importer.py`,
+   `evaluer_livrable.py`, `EXERCICE_PROJET_NLU.md`) to the root **without
+   overwriting `donnees/`**, then `uv sync`.
+2. Hand `donnees/ontologie.yaml` to the other group; write their cross test
+   (at least 15 sentences) and check it:
    `uv run python valider_donnees.py --test-croise test_croise_<groupe>.csv --ontologie ontologie_<groupe>.yaml`
-3. Roman écrit `donnees/test.csv` (3 par intention).
-4. `make valider` jusqu'à 0 erreur.
-5. Régler sur la validation : `make run` avec `TRAIN_MAX_STEPS` = 30, 60, 100, 150
-   dans `.env`, puis `make prompt-systeme` et `make prompt-exemples`.
-6. Juger une seule fois : `make juger`. Noter le nombre de lectures du test.
-7. Compléter `donnees/NOTES.md` (scores, écart test / test croisé).
-8. `make livrer`, puis `make evaluer` et
+3. Roman writes `donnees/test.csv` (3 per intention).
+4. `make valider` until 0 errors.
+5. Tune on validation: `make run` with `TRAIN_MAX_STEPS` = 30, 60, 100, 150
+   in `.env`, then `make prompt-systeme` and `make prompt-exemples`.
+6. Judge once: `make juger`. Write down how many times the test was read.
+7. Finish `donnees/NOTES.md` (scores, gap between our test and the cross test).
+8. `make livrer`, then `make evaluer` and
    `uv run python evaluer_livrable.py livrables/livrable_<groupe>.zip --demo`.
-   Les scores doivent correspondre à `make juger`. Rendre seulement le `.zip`.
+   Scores must match `make juger`. Hand in only the `.zip`.

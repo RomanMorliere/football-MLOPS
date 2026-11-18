@@ -1,43 +1,42 @@
 # Notes
 
-## Sujet
-Assistant de réservation de terrains de football au Liban, inspiré de
-l'application Foot 7joz (React Native + Spring Boot). Les intentions
-correspondent à ce que l'application fait vraiment : chercher un terrain,
-vérifier un créneau, demander un prix, réserver, consulter ses réservations,
-annuler, changer le moyen de paiement. Tout le reste, y compris déplacer ou
-prolonger une réservation (que l'application ne permet pas), va dans
-`hors_domaine`.
+## Subject
+An English assistant for booking football pitches in Lebanon, based on the
+Foot 7joz app (React Native + Spring Boot). The intentions match what the app
+actually does: find a pitch, check a slot, ask a price, book, view bookings,
+cancel, change the payment method. Everything else, including moving or
+extending a booking (which the app does not support), goes to `hors_domaine`.
+Intention and slot names are French (`reserver_terrain | ville=...`), the
+messages and values are English.
 
-## Source et licence des données
-Écrites à la main par le groupe, en français. Aucun jeu de données en ligne.
-Noms de complexes inventés ; villes et quartiers libanais publics ; aucune
-donnée personnelle.
+## Data source and licence
+Written by hand by the group, in English. No online dataset. Venue names are
+invented; Lebanese cities and areas are public places; no personal data.
 
-## Choix
-- Valeurs recopiées du message (minuscules, sans article), comme le demande
-  l'exercice : la conversion « demain 20h » -> date réelle reste le travail de
-  l'application, pas du modèle.
-- Ordre de décision écrit dans l'ontologie pour que deux personnes choisissent
-  la même intention.
-- `hors_domaine` contient des « presque-réservations » (déplacer, prolonger,
-  liste d'attente, remboursement) pour que le modèle ne range pas tout ce qui
-  parle d'une réservation dans une intention d'action.
+## Choices
+- Values are copied from the message (lowercase, no leading article), as the
+  exercise requires: turning "tomorrow 8 pm" into a real date is the app's job,
+  not the model's.
+- A decision order is written in the ontology so two people pick the same
+  intention.
+- `hors_domaine` contains near-bookings (move, extend, waiting list, refund) so
+  the model does not file everything that mentions a booking under an action.
 
-## Limites
-- Une même idée a plusieurs valeurs (couvert, couverts, intérieur, en salle).
-- Heures sans matin/soir (« à 8h ») et dates relatives (« lundi prochain »)
-  restent ambiguës.
-- Pas d'arabe ni d'arabizi, alors que les vrais utilisateurs en écriraient.
-- `nb_joueurs` ne dit pas si c'est un total ou par équipe (« 5 contre 5 »).
+## Limits
+- One idea has several values (indoor, covered; outdoor, open-air; cash, on site).
+- Times without am/pm ("at 8") and relative dates ("next Monday") stay ambiguous.
+- English only: no French, Arabic or Arabizi, which real users in Lebanon would write.
+- `nb_joueurs` does not say whether it is a total or per team ("5-a-side").
+- The course scorer strips French articles from values, not English ones, so
+  the "no leading article" rule is applied by hand in the data.
 
-## Réglages et résultats
-À compléter : TRAIN_MAX_STEPS retenu, meilleur prompt, scores validation,
-scores test (LoRA / base / base+prompt), score test croisé.
+## Settings and results
+To fill in: chosen TRAIN_MAX_STEPS, best prompt, validation scores, test scores
+(LoRA / base / base+prompt), cross-test score.
 
-## Lectures du test
-À compléter (compteur `lectures_test` du rapport). Toute modification des
-données après lecture du test sera notée ici.
+## Test reads
+To fill in (the `lectures_test` counter in the report). Any change to the data
+after reading the test will be noted here.
 
-## Écart entre notre test et le test croisé
-À compléter après réception du score.
+## Gap between our test and the cross test
+To fill in once the score comes back.

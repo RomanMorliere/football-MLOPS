@@ -1,121 +1,121 @@
 phrase;reponse
-trouve-moi un terrain de foot à Beyrouth;chercher_terrain | ville=beyrouth
-il y a des terrains couverts à Jounieh ?;chercher_terrain | ville=jounieh | type_terrain=couverts
-montre-moi les terrains en plein air à Hamra;chercher_terrain | ville=hamra | type_terrain=plein air
-je cherche un terrain pour 10 joueurs à Zahlé;chercher_terrain | ville=zahlé | nb_joueurs=10
-quels terrains vous avez à Tripoli;chercher_terrain | ville=tripoli
-affiche tous les terrains;chercher_terrain
-y a-t-il un terrain de 5 contre 5 à Achrafieh;chercher_terrain | ville=achrafieh | nb_joueurs=5 contre 5
-où est-ce que je peux jouer au foot à Jbeil;chercher_terrain | ville=jbeil
-est-ce que Cedars Arena est sur l'application;chercher_terrain | nom_terrain=cedars arena
-montre-moi les terrains de Goal Zone;chercher_terrain | nom_terrain=goal zone
-un terrain intérieur à Dbayeh pour 14 joueurs;chercher_terrain | ville=dbayeh | type_terrain=intérieur | nb_joueurs=14
-je veux un terrain extérieur vers Batroun;chercher_terrain | ville=batroun | type_terrain=extérieur
-liste les terrains de Saïda;chercher_terrain | ville=saïda
-c'est où Kick Off Club;chercher_terrain | nom_terrain=kick off club
-des terrains à Kaslik pour 22 joueurs ?;chercher_terrain | ville=kaslik | nb_joueurs=22
-Goal Zone est libre demain à 20h ?;verifier_disponibilite | nom_terrain=goal zone | date=demain | heure=20h
-quels créneaux sont dispo à Cedars Arena vendredi;verifier_disponibilite | nom_terrain=cedars arena | date=vendredi
-il reste un créneau ce soir à Hamra ?;verifier_disponibilite | ville=hamra | date=ce soir
-on peut jouer 90 minutes à Arena 5 samedi à 18h ?;verifier_disponibilite | nom_terrain=arena 5 | date=samedi | heure=18h | duree=90 minutes
-il y a de la place à Kick Off Club aujourd'hui;verifier_disponibilite | nom_terrain=kick off club | date=aujourd'hui
-c'est quand le prochain créneau libre à Pitch 7;verifier_disponibilite | nom_terrain=pitch 7
-vérifie la dispo de Stade Nour le 25 décembre à 19h pour deux heures;verifier_disponibilite | nom_terrain=stade nour | date=25 décembre | heure=19h | duree=deux heures
-un terrain couvert est libre à Jounieh dimanche ?;verifier_disponibilite | ville=jounieh | type_terrain=couvert | date=dimanche
-est-ce que 21h30 est encore dispo à Goal Zone jeudi;verifier_disponibilite | nom_terrain=goal zone | date=jeudi | heure=21h30
-Cedars Arena a de la place après-demain à 19h30 ?;verifier_disponibilite | nom_terrain=cedars arena | date=après-demain | heure=19h30
-vous avez un créneau d'1h demain à 22h à Zalka;verifier_disponibilite | ville=zalka | date=demain | heure=22h | duree=1h
-quelles heures sont libres lundi à Pitch 7;verifier_disponibilite | nom_terrain=pitch 7 | date=lundi
-est-ce que Arena 5 est occupé samedi soir;verifier_disponibilite | nom_terrain=arena 5 | date=samedi soir
-regarde si Stade Nour est dispo mercredi à 17h;verifier_disponibilite | nom_terrain=stade nour | date=mercredi | heure=17h
-y a-t-il un terrain libre à Antélias ce soir à 21h;verifier_disponibilite | ville=antélias | date=ce soir | heure=21h
-combien coûte Goal Zone pour 1h;demander_prix | nom_terrain=goal zone | duree=1h
-c'est quoi le prix de 90 minutes à Cedars Arena;demander_prix | nom_terrain=cedars arena | duree=90 minutes
-combien coûte un terrain à Beyrouth;demander_prix | ville=beyrouth
-le prix d'un terrain couvert à Jounieh ?;demander_prix | ville=jounieh | type_terrain=couvert
-ça fait combien deux heures à Arena 5;demander_prix | nom_terrain=arena 5 | duree=deux heures
-Pitch 7 c'est cher ?;demander_prix | nom_terrain=pitch 7
-quel est le tarif horaire de Kick Off Club;demander_prix | nom_terrain=kick off club
-combien pour 1h30 à Stade Nour;demander_prix | nom_terrain=stade nour | duree=1h30
-c'est combien le terrain à Hamra;demander_prix | ville=hamra
-combien je paie pour 90 minutes demain à 21h à Goal Zone;demander_prix | nom_terrain=goal zone | date=demain | heure=21h | duree=90 minutes
-quel est le terrain le moins cher à Tripoli;demander_prix | ville=tripoli
-combien coûte un terrain pour 22 joueurs à Zahlé;demander_prix | ville=zahlé | nb_joueurs=22
-le terrain extérieur de Pitch 7 coûte combien;demander_prix | nom_terrain=pitch 7 | type_terrain=extérieur
-donne-moi les tarifs de Cedars Arena;demander_prix | nom_terrain=cedars arena
-trois heures à Arena 5 ça revient à combien;demander_prix | nom_terrain=arena 5 | duree=trois heures
-réserve un terrain à Beyrouth demain à 20h pour 90 minutes;reserver_terrain | ville=beyrouth | date=demain | heure=20h | duree=90 minutes
-réserve Goal Zone vendredi à 21h;reserver_terrain | nom_terrain=goal zone | date=vendredi | heure=21h
-je veux réserver Cedars Arena demain à 19h pendant deux heures et je paie par Whish;reserver_terrain | nom_terrain=cedars arena | date=demain | heure=19h | duree=deux heures | paiement=whish
-réserve-moi un terrain couvert à Jounieh samedi à 18h pour 1h;reserver_terrain | ville=jounieh | type_terrain=couvert | date=samedi | heure=18h | duree=1h
-bloque un terrain pour 10 joueurs à Hamra ce soir à 22h;reserver_terrain | ville=hamra | nb_joueurs=10 | date=ce soir | heure=22h
-tu peux réserver Arena 5 pour 90 minutes le 12 décembre à 20h;reserver_terrain | nom_terrain=arena 5 | date=12 décembre | heure=20h | duree=90 minutes
-réserve Pitch 7 après-demain à 20h30 en cash;reserver_terrain | nom_terrain=pitch 7 | date=après-demain | heure=20h30 | paiement=cash
-je voudrais réserver Kick Off Club;reserver_terrain | nom_terrain=kick off club
-je réserve un terrain à Zahlé demain à 21h;reserver_terrain | ville=zahlé | date=demain | heure=21h
-prends-moi un créneau à Stade Nour dimanche à 19h pour 1h;reserver_terrain | nom_terrain=stade nour | date=dimanche | heure=19h | duree=1h
-réserve un terrain extérieur à Batroun jeudi à 18h pour 2h;reserver_terrain | ville=batroun | type_terrain=extérieur | date=jeudi | heure=18h | duree=2h
-garde-moi Cedars Arena lundi prochain à 21h;reserver_terrain | nom_terrain=cedars arena | date=lundi prochain | heure=21h
-réserve 90 minutes à Goal Zone aujourd'hui à 23h et je paie sur place;reserver_terrain | nom_terrain=goal zone | date=aujourd'hui | heure=23h | duree=90 minutes | paiement=sur place
-fais une réservation à Tripoli demain à 17h;reserver_terrain | ville=tripoli | date=demain | heure=17h
-on veut jouer à Arena 5 mardi à 20h, réserve en espèces;reserver_terrain | nom_terrain=arena 5 | date=mardi | heure=20h | paiement=espèces
-montre mes réservations;consulter_reservations
-j'ai des matchs prévus ?;consulter_reservations
-qu'est-ce que j'ai réservé pour demain;consulter_reservations | date=demain
-c'est quand mon prochain match;consulter_reservations
-ma réservation à Goal Zone est confirmée ?;consulter_reservations | nom_terrain=goal zone
-affiche mes anciennes réservations;consulter_reservations
-est-ce que le terrain a accepté ma demande;consulter_reservations
-à quelle heure est mon match vendredi;consulter_reservations | date=vendredi
-je veux voir mes réservations;consulter_reservations
-j'ai quelque chose à Cedars Arena samedi ?;consulter_reservations | nom_terrain=cedars arena | date=samedi
-liste tout ce que j'ai réservé;consulter_reservations
-est-ce que je joue ce soir;consulter_reservations | date=ce soir
-ma réservation à Pitch 7 est toujours en attente ?;consulter_reservations | nom_terrain=pitch 7
-vérifie ma réservation de demain à 21h;consulter_reservations | date=demain | heure=21h
-combien de réservations j'ai cette semaine;consulter_reservations | date=cette semaine
-annule ma réservation;annuler_reservation
-annule mon match de demain à 20h;annuler_reservation | date=demain | heure=20h
-je ne peux pas venir à Goal Zone vendredi, annule;annuler_reservation | nom_terrain=goal zone | date=vendredi
-annule la réservation à Cedars Arena;annuler_reservation | nom_terrain=cedars arena
-annule ma réservation de samedi;annuler_reservation | date=samedi
-supprime mon match de 21h aujourd'hui;annuler_reservation | date=aujourd'hui | heure=21h
-on ne joue plus dimanche, annule le terrain;annuler_reservation | date=dimanche
-annule la réservation à Arena 5 le 15 décembre;annuler_reservation | nom_terrain=arena 5 | date=15 décembre
-laisse tomber le match de ce soir;annuler_reservation | date=ce soir
-je veux annuler ma réservation à Pitch 7 demain à 19h30;annuler_reservation | nom_terrain=pitch 7 | date=demain | heure=19h30
-enlève ma réservation de jeudi;annuler_reservation | date=jeudi
-annule ma demande en attente à Kick Off Club;annuler_reservation | nom_terrain=kick off club
-j'ai un empêchement, annule le match d'après-demain;annuler_reservation | date=après-demain
-retire ma réservation de 18h lundi;annuler_reservation | date=lundi | heure=18h
-plus besoin du terrain à Stade Nour mercredi;annuler_reservation | nom_terrain=stade nour | date=mercredi
-je veux payer par Whish finalement;changer_paiement | paiement=whish
-passe ma réservation à Goal Zone en Whish;changer_paiement | nom_terrain=goal zone | paiement=whish
-je peux payer en cash pour le match de demain ?;changer_paiement | date=demain | paiement=cash
-change le paiement de ma réservation de vendredi en Whish;changer_paiement | date=vendredi | paiement=whish
-je paierai avec Whish pour le match à Cedars Arena;changer_paiement | nom_terrain=cedars arena | paiement=whish
-je préfère payer en espèces pour samedi;changer_paiement | date=samedi | paiement=espèces
-mets le paiement en cash pour mon match de 21h;changer_paiement | heure=21h | paiement=cash
-pour Arena 5, je règle par Whish;changer_paiement | nom_terrain=arena 5 | paiement=whish
-en fait je paie sur place pour demain;changer_paiement | date=demain | paiement=sur place
-je peux régler ma réservation à Pitch 7 avec Whish ?;changer_paiement | nom_terrain=pitch 7 | paiement=whish
-utilise Whish pour mon prochain match;changer_paiement | paiement=whish
-le match de ce soir, je le paie par Whish;changer_paiement | date=ce soir | paiement=whish
-dimanche je paierai en liquide;changer_paiement | date=dimanche | paiement=liquide
-change le mode de paiement en Whish pour le 20 décembre;changer_paiement | date=20 décembre | paiement=whish
-modifie le paiement de ma réservation à Stade Nour, je paie en cash;changer_paiement | nom_terrain=stade nour | paiement=cash
-bonjour;hors_domaine
-qui a gagné le match hier soir;hors_domaine
-décale ma réservation à 21h;hors_domaine
-prolonge mon match de 30 minutes;hors_domaine
-change ma réservation pour l'autre terrain;hors_domaine
-mets-moi sur liste d'attente pour Goal Zone;hors_domaine
-donne cinq étoiles à Cedars Arena;hors_domaine
-rembourse mon paiement Whish;hors_domaine
-ajoute mon ami à ma réservation;hors_domaine
-trouve-moi un coéquipier pour ce soir;hors_domaine
-merci c'est tout;hors_domaine
-quel temps fera-t-il demain à Beyrouth;hors_domaine
-change mon nom d'utilisateur;hors_domaine
-réserve-moi une table au restaurant demain à 20h;hors_domaine
-raconte-moi une blague;hors_domaine
+find me a football pitch in Beirut;chercher_terrain | ville=beirut
+are there any indoor pitches in Jounieh?;chercher_terrain | ville=jounieh | type_terrain=indoor
+show me outdoor fields in Hamra;chercher_terrain | ville=hamra | type_terrain=outdoor
+I need a pitch for 10 players in Zahle;chercher_terrain | ville=zahle | nb_joueurs=10
+which venues do you have in Tripoli;chercher_terrain | ville=tripoli
+list all the pitches;chercher_terrain
+is there a 5-a-side pitch in Achrafieh;chercher_terrain | ville=achrafieh | nb_joueurs=5-a-side
+where can I play football in Byblos;chercher_terrain | ville=byblos
+is Cedars Arena on the app?;chercher_terrain | nom_terrain=cedars arena
+show me the courts at Goal Zone;chercher_terrain | nom_terrain=goal zone
+any covered pitch in Dbayeh for 14 players?;chercher_terrain | ville=dbayeh | type_terrain=covered | nb_joueurs=14
+looking for an open-air field around Batroun;chercher_terrain | ville=batroun | type_terrain=open-air
+pitches in Saida please;chercher_terrain | ville=saida
+where is Kick Off Club;chercher_terrain | nom_terrain=kick off club
+what pitches are there in Kaslik for 22 players;chercher_terrain | ville=kaslik | nb_joueurs=22
+is Goal Zone free tomorrow at 8 pm?;verifier_disponibilite | nom_terrain=goal zone | date=tomorrow | heure=8 pm
+what times are available at Cedars Arena on Friday;verifier_disponibilite | nom_terrain=cedars arena | date=friday
+any free slot tonight in Hamra?;verifier_disponibilite | ville=hamra | date=tonight
+can we play 90 minutes at Arena 5 on Saturday at 6 pm?;verifier_disponibilite | nom_terrain=arena 5 | date=saturday | heure=6 pm | duree=90 minutes
+is there anything open at Kick Off Club today;verifier_disponibilite | nom_terrain=kick off club | date=today
+when is the next free slot at Pitch 7;verifier_disponibilite | nom_terrain=pitch 7
+check availability at Stade Nour on December 25 at 7 pm for two hours;verifier_disponibilite | nom_terrain=stade nour | date=december 25 | heure=7 pm | duree=two hours
+is an indoor court free in Jounieh on Sunday?;verifier_disponibilite | ville=jounieh | type_terrain=indoor | date=sunday
+is 9:30 pm still open at Goal Zone on Thursday;verifier_disponibilite | nom_terrain=goal zone | date=thursday | heure=9:30 pm
+does Cedars Arena have room the day after tomorrow at 7:30 pm?;verifier_disponibilite | nom_terrain=cedars arena | date=day after tomorrow | heure=7:30 pm
+do you have a 1 hour slot tomorrow at 10 pm in Zalka;verifier_disponibilite | ville=zalka | date=tomorrow | heure=10 pm | duree=1 hour
+which hours are still free on Monday at Pitch 7;verifier_disponibilite | nom_terrain=pitch 7 | date=monday
+is Arena 5 booked on Saturday night;verifier_disponibilite | nom_terrain=arena 5 | date=saturday night
+see if Stade Nour is available Wednesday at 5 pm;verifier_disponibilite | nom_terrain=stade nour | date=wednesday | heure=5 pm
+is there a free pitch in Antelias tonight at 9 pm;verifier_disponibilite | ville=antelias | date=tonight | heure=9 pm
+how much is Goal Zone for 1 hour;demander_prix | nom_terrain=goal zone | duree=1 hour
+what's the price of 90 minutes at Cedars Arena;demander_prix | nom_terrain=cedars arena | duree=90 minutes
+how much does a pitch cost in Beirut;demander_prix | ville=beirut
+price of an indoor pitch in Jounieh?;demander_prix | ville=jounieh | type_terrain=indoor
+how much for two hours at Arena 5;demander_prix | nom_terrain=arena 5 | duree=two hours
+is Pitch 7 expensive?;demander_prix | nom_terrain=pitch 7
+what's the hourly rate at Kick Off Club;demander_prix | nom_terrain=kick off club
+how much for 1h30 at Stade Nour;demander_prix | nom_terrain=stade nour | duree=1h30
+how much is the pitch in Hamra;demander_prix | ville=hamra
+what would I pay for 90 minutes tomorrow at 9 pm at Goal Zone;demander_prix | nom_terrain=goal zone | date=tomorrow | heure=9 pm | duree=90 minutes
+what's the cheapest pitch in Tripoli;demander_prix | ville=tripoli
+how much is a pitch for 22 players in Zahle;demander_prix | ville=zahle | nb_joueurs=22
+how much does the outdoor court at Pitch 7 cost;demander_prix | nom_terrain=pitch 7 | type_terrain=outdoor
+give me the prices for Cedars Arena;demander_prix | nom_terrain=cedars arena
+three hours at Arena 5, how much is that;demander_prix | nom_terrain=arena 5 | duree=three hours
+book a football pitch in Beirut tomorrow at 8 pm for 90 minutes;reserver_terrain | ville=beirut | date=tomorrow | heure=8 pm | duree=90 minutes
+book Goal Zone on Friday at 9 pm;reserver_terrain | nom_terrain=goal zone | date=friday | heure=9 pm
+reserve Cedars Arena tomorrow at 7 pm for two hours and I'll pay with Whish;reserver_terrain | nom_terrain=cedars arena | date=tomorrow | heure=7 pm | duree=two hours | paiement=whish
+book me an indoor pitch in Jounieh on Saturday at 6 pm for 1 hour;reserver_terrain | ville=jounieh | type_terrain=indoor | date=saturday | heure=6 pm | duree=1 hour
+grab a pitch for 10 players in Hamra tonight at 10 pm;reserver_terrain | ville=hamra | nb_joueurs=10 | date=tonight | heure=10 pm
+can you book Arena 5 for 90 minutes on December 12 at 8 pm;reserver_terrain | nom_terrain=arena 5 | date=december 12 | heure=8 pm | duree=90 minutes
+reserve Pitch 7 the day after tomorrow at 8:30 pm, cash;reserver_terrain | nom_terrain=pitch 7 | date=day after tomorrow | heure=8:30 pm | paiement=cash
+I'd like to book Kick Off Club;reserver_terrain | nom_terrain=kick off club
+I want to book a pitch in Zahle tomorrow at 9 pm;reserver_terrain | ville=zahle | date=tomorrow | heure=9 pm
+get me a slot at Stade Nour on Sunday at 7 pm for 1 hour;reserver_terrain | nom_terrain=stade nour | date=sunday | heure=7 pm | duree=1 hour
+book an outdoor field in Batroun on Thursday at 6 pm for 2 hours;reserver_terrain | ville=batroun | type_terrain=outdoor | date=thursday | heure=6 pm | duree=2 hours
+lock in Cedars Arena for next Monday at 9 pm;reserver_terrain | nom_terrain=cedars arena | date=next monday | heure=9 pm
+book 90 minutes at Goal Zone today at 11 pm and I'll pay on site;reserver_terrain | nom_terrain=goal zone | date=today | heure=11 pm | duree=90 minutes | paiement=on site
+make a reservation in Tripoli tomorrow at 5 pm;reserver_terrain | ville=tripoli | date=tomorrow | heure=5 pm
+we want to play at Arena 5 on Tuesday at 8 pm, book it and we pay cash;reserver_terrain | nom_terrain=arena 5 | date=tuesday | heure=8 pm | paiement=cash
+show my bookings;consulter_reservations
+do I have any games coming up?;consulter_reservations
+what did I book for tomorrow;consulter_reservations | date=tomorrow
+when is my next match;consulter_reservations
+is my booking at Goal Zone confirmed?;consulter_reservations | nom_terrain=goal zone
+show me my past bookings;consulter_reservations
+did the venue accept my request;consulter_reservations
+what time is my game on Friday;consulter_reservations | date=friday
+I want to see my reservations;consulter_reservations
+do I have something at Cedars Arena on Saturday?;consulter_reservations | nom_terrain=cedars arena | date=saturday
+list everything I've booked;consulter_reservations
+am I playing tonight;consulter_reservations | date=tonight
+is my Pitch 7 booking still pending?;consulter_reservations | nom_terrain=pitch 7
+check my reservation for tomorrow at 9 pm;consulter_reservations | date=tomorrow | heure=9 pm
+how many bookings do I have this week;consulter_reservations | date=this week
+cancel my booking;annuler_reservation
+cancel my game tomorrow at 8 pm;annuler_reservation | date=tomorrow | heure=8 pm
+I can't make it to Goal Zone on Friday, cancel it;annuler_reservation | nom_terrain=goal zone | date=friday
+please cancel the Cedars Arena reservation;annuler_reservation | nom_terrain=cedars arena
+cancel my Saturday booking;annuler_reservation | date=saturday
+drop my 9 pm match today;annuler_reservation | date=today | heure=9 pm
+we're not playing on Sunday anymore, cancel the pitch;annuler_reservation | date=sunday
+cancel the booking at Arena 5 on December 15;annuler_reservation | nom_terrain=arena 5 | date=december 15
+call off tonight's game;annuler_reservation | date=tonight
+I want to cancel my reservation at Pitch 7 tomorrow at 7:30 pm;annuler_reservation | nom_terrain=pitch 7 | date=tomorrow | heure=7:30 pm
+remove my Thursday booking;annuler_reservation | date=thursday
+cancel my pending request at Kick Off Club;annuler_reservation | nom_terrain=kick off club
+something came up, cancel my match the day after tomorrow;annuler_reservation | date=day after tomorrow
+get rid of my 6 pm booking on Monday;annuler_reservation | date=monday | heure=6 pm
+no need for the pitch at Stade Nour on Wednesday anymore;annuler_reservation | nom_terrain=stade nour | date=wednesday
+I want to pay with Whish instead;changer_paiement | paiement=whish
+switch my booking at Goal Zone to Whish;changer_paiement | nom_terrain=goal zone | paiement=whish
+can I pay cash for tomorrow's game?;changer_paiement | date=tomorrow | paiement=cash
+change the payment of my Friday booking to Whish;changer_paiement | date=friday | paiement=whish
+I'll pay through Whish for the Cedars Arena match;changer_paiement | nom_terrain=cedars arena | paiement=whish
+I'd rather pay in cash for Saturday;changer_paiement | date=saturday | paiement=cash
+set the payment to cash for my 9 pm game;changer_paiement | heure=9 pm | paiement=cash
+for Arena 5 I'll settle with Whish;changer_paiement | nom_terrain=arena 5 | paiement=whish
+actually I'll pay on site for tomorrow;changer_paiement | date=tomorrow | paiement=on site
+can I settle my Pitch 7 booking with Whish?;changer_paiement | nom_terrain=pitch 7 | paiement=whish
+use Whish for my next match;changer_paiement | paiement=whish
+tonight's match, I'll pay it by Whish;changer_paiement | date=tonight | paiement=whish
+on Sunday I'll pay at the venue;changer_paiement | date=sunday | paiement=at the venue
+change the payment method to Whish for December 20;changer_paiement | date=december 20 | paiement=whish
+update the payment on my Stade Nour booking, I'll pay cash;changer_paiement | nom_terrain=stade nour | paiement=cash
+hello;hors_domaine
+who won the match last night;hors_domaine
+move my booking to 9 pm;hors_domaine
+extend my game by 30 minutes;hors_domaine
+switch my booking to the other court;hors_domaine
+put me on the waiting list for Goal Zone;hors_domaine
+give Cedars Arena five stars;hors_domaine
+refund my Whish payment;hors_domaine
+add my friend to my booking;hors_domaine
+find me a teammate for tonight;hors_domaine
+thanks, that's all;hors_domaine
+what's the weather tomorrow in Beirut;hors_domaine
+change my username;hors_domaine
+book me a table at a restaurant tomorrow at 8 pm;hors_domaine
+tell me a joke;hors_domaine
