@@ -19,20 +19,54 @@ Example: `book Goal Zone on Friday at 9 pm` ->
 | `donnees/test.csv` | **written by Roman**, without looking at train (see `docs/prompt_test.md`) |
 | `donnees/NOTES.md` | source, licence, choices, limits, number of test reads |
 
+## Setup (once per machine)
+
+```powershell
+$env:PYTHONUTF8 = "1"   # the kit prints emojis; the Windows console needs UTF-8
+uv sync
+make setup              # MLflow + RustFS in Docker (Docker Desktop must be running)
+```
+
+Create a `.env` at the root (not versioned) with at least:
+
+```
+GROUPE=<our group name>
+PROMPT_SYSTEME_FILE=prompts/examples_train_en.txt
+TRAIN_MAX_STEPS=150
+```
+
+Everything else falls back to the defaults in `src/config.py`.
+
+## Prompts
+
+The kit builds its system prompt in French (`make prompt-systeme`). Our
+assistant is English, so the English versions are in `prompts/`:
+
+- `prompts/system_en.txt`: ontology only
+- `prompts/examples_train_en.txt`: ontology + one train example per intention
+
+Measure them on validation:
+
+```powershell
+uv run python prompt_lab.py prompts/system_en.txt validation
+uv run python prompt_lab.py prompts/examples_train_en.txt validation
+```
+
+Point `PROMPT_SYSTEME_FILE` at the better one: that is the base+prompt column
+the LoRA must beat.
+
 ## Steps
 
-1. Copy the exercise kit (Makefile, `valider_donnees.py`, `importer.py`,
-   `evaluer_livrable.py`, `EXERCICE_PROJET_NLU.md`) to the root **without
-   overwriting `donnees/`**, then `uv sync`.
+1. `make valider`: 0 errors (done).
 2. Hand `donnees/ontologie.yaml` to the other group; write their cross test
    (at least 15 sentences) and check it:
    `uv run python valider_donnees.py --test-croise test_croise_<groupe>.csv --ontologie ontologie_<groupe>.yaml`
-3. Roman writes `donnees/test.csv` (3 per intention).
-4. `make valider` until 0 errors.
-5. Tune on validation: `make run` with `TRAIN_MAX_STEPS` = 30, 60, 100, 150
-   in `.env`, then `make prompt-systeme` and `make prompt-exemples`.
-6. Judge once: `make juger`. Write down how many times the test was read.
-7. Finish `donnees/NOTES.md` (scores, gap between our test and the cross test).
-8. `make livrer`, then `make evaluer` and
+3. Tune on validation: `make run` with `TRAIN_MAX_STEPS` = 30, 60, 100, 150
+   in `.env`, and measure the two English prompts.
+4. Judge once: `make juger`. Write down how many times the test was read.
+5. Finish `donnees/NOTES.md` (scores, gap between our test and the cross test).
+6. `make livrer`, then `make evaluer` and
    `uv run python evaluer_livrable.py livrables/livrable_<groupe>.zip --demo`.
    Scores must match `make juger`. Hand in only the `.zip`.
+
+The course's own instructions are in `EXERCICE_PROJET_NLU.md` and `KIT_README.md`.
