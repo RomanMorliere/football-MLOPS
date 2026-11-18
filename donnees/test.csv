@@ -1,0 +1,26 @@
+phrase;reponse
+any indoor pitches in Achrafieh for 5-a-side;search_pitch | location=achrafieh | pitch_type=indoor | players=5-a-side
+where is Cedar Kick located in Tripoli;search_pitch | location=tripoli | venue=cedar kick
+show me outdoor fields around Saida for 14 players;search_pitch | location=saida | pitch_type=outdoor | players=14
+is Olive Arena free tomorrow at 7 pm;check_availability | venue=olive arena | date=tomorrow | time=7 pm
+what times are open at Phoenicia Turf on Saturday;check_availability | venue=phoenicia turf | date=saturday
+got any covered courts available in Byblos tonight;check_availability | location=byblos | pitch_type=covered | date=tonight
+how much is 90 minutes at Levant Goal;ask_price | venue=levant goal | duration=90 minutes
+whats the cheapest open-air pitch in Zahle for 1 hour;ask_price | location=zahle | pitch_type=open-air | duration=1 hour
+price for 10 players at Bekaa Stadium on Friday;ask_price | venue=bekaa stadium | players=10 | date=friday
+book Coastline Pitch in Batroun for Sunday at 8:30 pm for two hours paying cash;book_pitch | location=batroun | venue=coastline pitch | date=sunday | time=8:30 pm | duration=two hours | payment=cash
+can i reserve an indoor field in Verdun tomorrow at 6 pm via Whish;book_pitch | location=verdun | pitch_type=indoor | date=tomorrow | time=6 pm | payment=whish
+need to book Harbor Five for 10 on March 12 at 9 pm paying on site;book_pitch | venue=harbor five | players=10 | date=march 12 | time=9 pm | payment=on site
+show my upcoming bookings;view_bookings
+when is my next match at Mountain Kick;view_bookings | venue=mountain kick
+check the status of my booking for Friday;view_bookings | date=friday
+cancel my booking at Cedar Kick for tomorrow;cancel_booking | venue=cedar kick | date=tomorrow
+i need to cancel my Sunday 8 pm reservation;cancel_booking | date=sunday | time=8 pm
+please cancel my match in Hamra;cancel_booking | location=hamra
+switch my payment to Whish for the Olive Arena booking;change_payment | venue=olive arena | payment=whish
+can i pay cash instead for tomorrow;change_payment | date=tomorrow | payment=cash
+change payment method to on site for my Friday match;change_payment | date=friday | payment=on site
+can I move my Saturday booking at Phoenicia Turf to 9 pm;out_of_scope
+put me on the waiting list for Levant Goal tonight;out_of_scope
+hey good morning how are you;out_of_scope
+can I get a refund for my cancelled game yesterday;out_of_scope
