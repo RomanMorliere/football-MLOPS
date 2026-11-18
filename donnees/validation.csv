@@ -1,0 +1,25 @@
+phrase;reponse
+je cherche un terrain à Baabda;chercher_terrain | ville=baabda
+quels sont les terrains en salle à Verdun;chercher_terrain | ville=verdun | type_terrain=en salle
+un terrain pour 12 joueurs près de Mansourieh;chercher_terrain | ville=mansourieh | nb_joueurs=12
+Green Park est disponible mardi à 20h30 ?;verifier_disponibilite | nom_terrain=green park | date=mardi | heure=20h30
+il reste quoi comme créneaux demain à Jbeil;verifier_disponibilite | ville=jbeil | date=demain
+Goal Zone a de la place pour deux heures jeudi soir ?;verifier_disponibilite | nom_terrain=goal zone | date=jeudi soir | duree=deux heures
+combien coûte 2h à Green Park;demander_prix | nom_terrain=green park | duree=2h
+les terrains extérieurs à Aley coûtent combien;demander_prix | ville=aley | type_terrain=extérieurs
+quel est le prix d'un match à Kick Off Club;demander_prix | nom_terrain=kick off club
+réserve Green Park mercredi à 19h pour 1h30;reserver_terrain | nom_terrain=green park | date=mercredi | heure=19h | duree=1h30
+je veux un terrain à Sour samedi à 16h, réserve-le;reserver_terrain | ville=sour | date=samedi | heure=16h
+réserve-moi Pitch 7 demain à 22h avec paiement Whish;reserver_terrain | nom_terrain=pitch 7 | date=demain | heure=22h | paiement=whish
+j'ai un match ce week-end ?;consulter_reservations | date=ce week-end
+montre-moi ma réservation à Green Park;consulter_reservations | nom_terrain=green park
+mes réservations sont confirmées ?;consulter_reservations
+annule mon match à Green Park mardi;annuler_reservation | nom_terrain=green park | date=mardi
+je veux annuler la réservation de 20h ce soir;annuler_reservation | date=ce soir | heure=20h
+annule tout pour demain;annuler_reservation | date=demain
+finalement je paie en espèces à Green Park;changer_paiement | nom_terrain=green park | paiement=espèces
+bascule mon match de jeudi sur Whish;changer_paiement | date=jeudi | paiement=whish
+je voudrais régler en liquide ma réservation de demain;changer_paiement | date=demain | paiement=liquide
+avance mon match d'une heure;hors_domaine
+c'est quoi le score du Barça;hors_domaine
+salut ça va;hors_domaine
