@@ -8,6 +8,7 @@ You are writing the TEST set for a small NLU model. I am attaching ontologie.yam
 
 Write a CSV file, semicolon-separated, with exactly this header:
 phrase;reponse
+(Keep that header word for word, French spelling included: the tool that reads the file expects it. Everything else is in English.)
 
 Format of the reponse column:
 intention | slot=value | slot=value
@@ -22,7 +23,7 @@ book Futsal Horizon on Thursday at 9 pm;book_pitch | venue=futsal horizon | date
 
 Content:
 - 3 messages per intention, so 24 lines (4 for out_of_scope if you like, 25 in total).
-- Messages in English, the way a real user would type them on a phone: short (under 300 characters), varied tone (polite, casual, no punctuation, a light typo), varied verbs and phrasings.
+- Messages in English only (no French or Arabic), the way a real user would type them on a phone: short (under 300 characters), varied tone (polite, casual, no punctuation, a light typo), varied verbs and phrasings.
 - Vary the values: invent your own (fictional) football venue names, use varied Lebanese cities and areas, different times, lengths and dates.
 - For out_of_scope, include at least one message that looks like a booking request but is not supported (moving a booking, extending a match, waiting list, refund...).
 - No personal data (no real names, phone numbers or precise addresses).
