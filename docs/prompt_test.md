@@ -11,20 +11,20 @@ phrase;reponse
 
 Format of the reponse column:
 intention | slot=value | slot=value
-- intention: one of the 8 intentions in the ontology, nothing else. Keep the names exactly as written (they are French words, that is expected).
+- intention: one of the 8 intentions in the ontology, nothing else.
 - slots: only those in the ontology, in the order the ontology lists them, only the ones present in the message.
 - value: copied EXACTLY from the message, lowercased, without a leading article (the, a, an). Normalise nothing: "8 PM" stays 8 pm, "tomorrow" stays tomorrow, "Beirut" becomes beirut. No "at", "on" or "for" in the value.
-- hors_domaine never has a slot.
+- out_of_scope never has a slot.
 - Use the decision order written in the comment at the top of the ontology to choose the intention.
 
 Example of the shape (made up, do not reuse it):
-book Futsal Horizon on Thursday at 9 pm;reserver_terrain | nom_terrain=futsal horizon | date=thursday | heure=9 pm
+book Futsal Horizon on Thursday at 9 pm;book_pitch | venue=futsal horizon | date=thursday | time=9 pm
 
 Content:
-- 3 messages per intention, so 24 lines (4 for hors_domaine if you like, 25 in total).
+- 3 messages per intention, so 24 lines (4 for out_of_scope if you like, 25 in total).
 - Messages in English, the way a real user would type them on a phone: short (under 300 characters), varied tone (polite, casual, no punctuation, a light typo), varied verbs and phrasings.
 - Vary the values: invent your own (fictional) football venue names, use varied Lebanese cities and areas, different times, lengths and dates.
-- For hors_domaine, include at least one message that looks like a booking request but is not supported (moving a booking, extending a match, waiting list, refund...).
+- For out_of_scope, include at least one message that looks like a booking request but is not supported (moving a booking, extending a match, waiting list, refund...).
 - No personal data (no real names, phone numbers or precise addresses).
 - No semicolons inside the messages.
 

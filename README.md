@@ -7,7 +7,7 @@ The model (Qwen3-0.6B + LoRA) reads a short message and answers
 validate the model.
 
 Example: `book Goal Zone on Friday at 9 pm` ->
-`reserver_terrain | nom_terrain=goal zone | date=friday | heure=9 pm`
+`book_pitch | venue=goal zone | date=friday | time=9 pm`
 
 ## Contents
 

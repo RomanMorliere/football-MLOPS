@@ -4,35 +4,35 @@
 #   - a slot value is copied from the message, lowercased, without a leading
 #     article (the, a, an);
 #   - slots are written in the order of the list below, only those present;
-#   - hors_domaine never has a slot.
+#   - out_of_scope never has a slot.
 # Decision order (so two people pick the same intention):
 #   1. is it about a booking I ALREADY made?
-#        payment -> changer_paiement ; cancelling -> annuler_reservation ;
-#        changing time, length or court -> hors_domaine ; otherwise -> consulter_reservations
-#   2. does it ask to book or reserve -> reserver_terrain (even if it also mentions a price)
-#   3. does it ask how much, or for the cheapest -> demander_prix
-#   4. does it ask whether something is free, or which times are open -> verifier_disponibilite
-#   5. does it ask to find, list or locate pitches -> chercher_terrain
-#   6. otherwise -> hors_domaine
+#        payment -> change_payment ; cancelling -> cancel_booking ;
+#        changing time, length or court -> out_of_scope ; otherwise -> view_bookings
+#   2. does it ask to book or reserve -> book_pitch (even if it also mentions a price)
+#   3. does it ask how much, or for the cheapest -> ask_price
+#   4. does it ask whether something is free, or which times are open -> check_availability
+#   5. does it ask to find, list or locate pitches -> search_pitch
+#   6. otherwise -> out_of_scope
 
 domaine: football pitch booking in Lebanon (English messages)
 
 intentions:
-  chercher_terrain: find or list pitches by place, name, type or number of players, without asking about a time slot
-  verifier_disponibilite: ask whether a pitch is free or which time slots are left, without asking to book
-  demander_prix: ask what a pitch or a match length costs, or which pitch is cheapest
-  reserver_terrain: ask to make a new booking
-  consulter_reservations: see one's own bookings, next match, or the status of a booking
-  annuler_reservation: cancel one of one's own bookings
-  changer_paiement: change how an existing booking is paid (cash or Whish)
-  hors_domaine: everything else (greetings, off-topic, moving or extending a booking, waiting list, ratings, refunds)
+  search_pitch: find or list pitches by place, name, type or number of players, without asking about a time slot
+  check_availability: ask whether a pitch is free or which time slots are left, without asking to book
+  ask_price: ask what a pitch or a match length costs, or which pitch is cheapest
+  book_pitch: ask to make a new booking
+  view_bookings: see one's own bookings, next match, or the status of a booking
+  cancel_booking: cancel one of one's own bookings
+  change_payment: change how an existing booking is paid (cash or Whish)
+  out_of_scope: everything else (greetings, off-topic, moving or extending a booking, waiting list, ratings, refunds)
 
 slots:
-  ville: city or area, as written (beirut, hamra, jounieh)
-  nom_terrain: name of the venue or pitch, as written (goal zone)
-  type_terrain: indoor or outdoor, as written (indoor, covered, outdoor, open-air)
-  nb_joueurs: number of players, as written (10, 5-a-side)
+  location: city or area, as written (beirut, hamra, jounieh)
+  venue: name of the venue or pitch, as written (goal zone)
+  pitch_type: indoor or outdoor, as written (indoor, covered, outdoor, open-air)
+  players: number of players, as written (10, 5-a-side)
   date: day, as written (tomorrow, friday, tonight, december 25)
-  heure: start time, as written (8 pm, 7:30 pm)
-  duree: match length, as written (90 minutes, 1 hour, two hours)
-  paiement: payment method, as written (whish, cash, on site)
+  time: start time, as written (8 pm, 7:30 pm)
+  duration: match length, as written (90 minutes, 1 hour, two hours)
+  payment: payment method, as written (whish, cash, on site)

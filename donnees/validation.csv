@@ -1,25 +1,25 @@
 phrase;reponse
-I'm looking for a pitch in Baabda;chercher_terrain | ville=baabda
-which indoor pitches are in Verdun;chercher_terrain | ville=verdun | type_terrain=indoor
-a pitch for 12 players near Mansourieh;chercher_terrain | ville=mansourieh | nb_joueurs=12
-is Green Park available Tuesday at 8:30 pm?;verifier_disponibilite | nom_terrain=green park | date=tuesday | heure=8:30 pm
-what slots are left tomorrow in Byblos;verifier_disponibilite | ville=byblos | date=tomorrow
-does Goal Zone have room for two hours on Thursday evening?;verifier_disponibilite | nom_terrain=goal zone | date=thursday evening | duree=two hours
-how much is 2 hours at Green Park;demander_prix | nom_terrain=green park | duree=2 hours
-how much do outdoor pitches in Aley cost;demander_prix | ville=aley | type_terrain=outdoor
-what's the price of a match at Kick Off Club;demander_prix | nom_terrain=kick off club
-book Green Park on Wednesday at 7 pm for 1h30;reserver_terrain | nom_terrain=green park | date=wednesday | heure=7 pm | duree=1h30
-I want a pitch in Tyre on Saturday at 4 pm, book it;reserver_terrain | ville=tyre | date=saturday | heure=4 pm
-reserve Pitch 7 tomorrow at 10 pm with Whish payment;reserver_terrain | nom_terrain=pitch 7 | date=tomorrow | heure=10 pm | paiement=whish
-do I have a match this weekend?;consulter_reservations | date=this weekend
-show me my booking at Green Park;consulter_reservations | nom_terrain=green park
-are my reservations confirmed?;consulter_reservations
-cancel my match at Green Park on Tuesday;annuler_reservation | nom_terrain=green park | date=tuesday
-I want to cancel the 8 pm booking tonight;annuler_reservation | date=tonight | heure=8 pm
-cancel everything for tomorrow;annuler_reservation | date=tomorrow
-actually I'll pay cash at Green Park;changer_paiement | nom_terrain=green park | paiement=cash
-switch my Thursday match to Whish;changer_paiement | date=thursday | paiement=whish
-I'd like to settle tomorrow's booking in cash;changer_paiement | date=tomorrow | paiement=cash
-bring my match forward by an hour;hors_domaine
-what's the Barcelona score;hors_domaine
-hey how are you;hors_domaine
+I'm looking for a pitch in Baabda;search_pitch | location=baabda
+which indoor pitches are in Verdun;search_pitch | location=verdun | pitch_type=indoor
+a pitch for 12 players near Mansourieh;search_pitch | location=mansourieh | players=12
+is Green Park available Tuesday at 8:30 pm?;check_availability | venue=green park | date=tuesday | time=8:30 pm
+what slots are left tomorrow in Byblos;check_availability | location=byblos | date=tomorrow
+does Goal Zone have room for two hours on Thursday evening?;check_availability | venue=goal zone | date=thursday evening | duration=two hours
+how much is 2 hours at Green Park;ask_price | venue=green park | duration=2 hours
+how much do outdoor pitches in Aley cost;ask_price | location=aley | pitch_type=outdoor
+what's the price of a match at Kick Off Club;ask_price | venue=kick off club
+book Green Park on Wednesday at 7 pm for 1h30;book_pitch | venue=green park | date=wednesday | time=7 pm | duration=1h30
+I want a pitch in Tyre on Saturday at 4 pm, book it;book_pitch | location=tyre | date=saturday | time=4 pm
+reserve Pitch 7 tomorrow at 10 pm with Whish payment;book_pitch | venue=pitch 7 | date=tomorrow | time=10 pm | payment=whish
+do I have a match this weekend?;view_bookings | date=this weekend
+show me my booking at Green Park;view_bookings | venue=green park
+are my reservations confirmed?;view_bookings
+cancel my match at Green Park on Tuesday;cancel_booking | venue=green park | date=tuesday
+I want to cancel the 8 pm booking tonight;cancel_booking | date=tonight | time=8 pm
+cancel everything for tomorrow;cancel_booking | date=tomorrow
+actually I'll pay cash at Green Park;change_payment | venue=green park | payment=cash
+switch my Thursday match to Whish;change_payment | date=thursday | payment=whish
+I'd like to settle tomorrow's booking in cash;change_payment | date=tomorrow | payment=cash
+bring my match forward by an hour;out_of_scope
+what's the Barcelona score;out_of_scope
+hey how are you;out_of_scope
