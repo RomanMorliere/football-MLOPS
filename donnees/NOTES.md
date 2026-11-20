@@ -54,12 +54,43 @@ the MLflow experiment `projet-nlu-v2`, so the judge cannot pick a run trained
 on the old data.
 
 ## Settings and results
-To fill in: chosen TRAIN_MAX_STEPS, best prompt, validation scores, test scores
-(LoRA / base / base+prompt), cross-test score.
+- Base model: Qwen/Qwen3-0.6B, LoRA r=8, alpha=16, dropout=0.05, learning rate 2e-4.
+- Chosen on validation: 300 steps (best validation intent accuracy, retrained on
+  the 150-sentence train). MLflow experiment `projet-nlu-v2`.
+- Prompt for the base+prompt column: `prompts/examples_train_en.txt` (English,
+  ontology + one train example per intention). The kit builds its prompt in
+  French; the English one without examples scored 0.00 on validation because
+  the base model copied the `<intention>` placeholders, so the version with
+  examples (0.58 on validation) is the honest baseline.
+
+Validation (24 sentences):
+
+| | intent | slot F1 | exact |
+|---|---|---|---|
+| base + prompt | 0.58 | 0.57 | 0.17 |
+| LoRA 300 steps, 150 train | 0.88 | 0.94 | 0.83 |
+
+Test (25 sentences, written by Roman without seeing train, read once):
+
+| | intent | slot F1 | exact |
+|---|---|---|---|
+| LoRA | 0.88 | 0.84 | 0.60 |
+| base | 0.00 | 0.20 | 0.00 |
+| base + prompt | 0.48 | 0.47 | 0.20 |
+
+Gate: PASS (intent 0.88 >= 0.70, lead +40 points >= 30).
+
+Intent accuracy is the same on validation and test (0.88), so the intentions
+generalise. Exact match drops from 0.83 to 0.60: the slot values are the
+fragile part (a value written differently, an extra or missing slot).
+
+Remaining errors on validation are mostly invented labels (`ask_pitch`,
+`cancel_pitch`): with 15 to 25 sentences per intention the model learns the
+shape `word_word | slot=value` faster than the closed list of names.
 
 ## Test reads
-To fill in (the `lectures_test` counter in the report). Any change to the data
-after reading the test will be noted here.
+1 (`make juger`, after the data change and the choice of 300 steps). No data or
+setting was changed after reading the test.
 
 ## Gap between our test and the cross test
 To fill in once the score comes back.
