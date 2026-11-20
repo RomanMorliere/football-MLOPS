@@ -119,3 +119,33 @@ what's the weather tomorrow in Beirut;out_of_scope
 change my username;out_of_scope
 book me a table at a restaurant tomorrow at 8 pm;out_of_scope
 tell me a joke;out_of_scope
+good morning;out_of_scope
+hi there;out_of_scope
+what's up;out_of_scope
+who scored for Real Madrid yesterday;out_of_scope
+is Lebanon playing tonight;out_of_scope
+what time does the Champions League final start;out_of_scope
+can you push my game back to 10 pm;out_of_scope
+make my booking 30 minutes longer;out_of_scope
+I want my money back for Saturday;out_of_scope
+what's your name;out_of_scope
+have I got a game on Friday?;view_bookings | date=friday
+what matches do I have coming up;view_bookings
+is my match tomorrow still on?;view_bookings | date=tomorrow
+show me my games for next week;view_bookings | date=next week
+when do I play at Goal Zone;view_bookings | venue=goal zone
+any slots left at Arena 5 tonight?;check_availability | venue=arena 5 | date=tonight
+which slots are still open on Sunday in Jounieh;check_availability | location=jounieh | date=sunday
+are there free slots at Pitch 7 the day after tomorrow;check_availability | venue=pitch 7 | date=day after tomorrow
+is there still a slot for a match at Cedars Arena on Monday at 8 pm;check_availability | venue=cedars arena | date=monday | time=8 pm
+what's still available tonight in Achrafieh;check_availability | location=achrafieh | date=tonight
+switch my Saturday game to cash;change_payment | date=saturday | payment=cash
+move the payment for my Friday match to Whish;change_payment | date=friday | payment=whish
+I'll pay my Goal Zone match with Whish now;change_payment | venue=goal zone | payment=whish
+put tonight's game on Whish;change_payment | date=tonight | payment=whish
+make my Arena 5 match cash instead of Whish;change_payment | venue=arena 5 | payment=cash
+how much is a match at Pitch 7;ask_price | venue=pitch 7
+what does a game cost at Stade Nour;ask_price | venue=stade nour
+price for a 90 minutes match in Hamra;ask_price | location=hamra | duration=90 minutes
+how much would a game tonight at Cedars Arena cost;ask_price | venue=cedars arena | date=tonight
+what's the cost of a 2 hours match at Goal Zone;ask_price | venue=goal zone | duration=2 hours

@@ -29,6 +29,30 @@ invented; Lebanese cities and areas are public places; no personal data.
 - The course scorer strips French articles from values, not English ones, so
   the "no leading article" rule is applied by hand in the data.
 
+## Data change during tuning (before reading the test)
+First tuning round on 120 training sentences, validation only:
+
+| Steps | val intent | val slot F1 | val exact |
+|---|---|---|---|
+| 30 | 0.00 | 0.17 | 0.00 |
+| 60 | 0.08 | 0.41 | 0.04 |
+| 100 | 0.46 | 0.79 | 0.33 |
+| 150 | 0.71 | 0.87 | 0.67 |
+| 200 | 0.71 | 0.83 | 0.63 |
+| 300 | 0.88 | 0.85 | 0.71 |
+| 400 | 0.83 | 0.91 | 0.79 |
+
+Base model + English prompt with one example per intention: 0.58 intent.
+The same errors survived every step count, so the problem was the data, not
+the training length. Five families: small talk and football news labelled as a
+booking intention, "do I have a match" (view_bookings), "slots left"
+(check_availability), "switch my match to Whish" (change_payment), "how much is
+a match" (ask_price), plus invented labels. 30 training sentences were added
+for those families (train 120 -> 150), written fresh, none copied from
+validation. The test had not been read at that point. The retrained runs are in
+the MLflow experiment `projet-nlu-v2`, so the judge cannot pick a run trained
+on the old data.
+
 ## Settings and results
 To fill in: chosen TRAIN_MAX_STEPS, best prompt, validation scores, test scores
 (LoRA / base / base+prompt), cross-test score.
