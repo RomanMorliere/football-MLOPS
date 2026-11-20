@@ -93,4 +93,20 @@ shape `word_word | slot=value` faster than the closed list of names.
 setting was changed after reading the test.
 
 ## Gap between our test and the cross test
-To fill in once the score comes back.
+No cross test: no other group was available to exchange ontologies with, so
+nobody outside the group wrote messages for this model, and we wrote none for
+another group.
+
+What stands in for it, and its limits:
+- The test was written by Roman alone, from the ontology only, without seeing
+  train or validation, and it was read once. The validation was never used to
+  write it.
+- Intent accuracy is the same on validation (0.88) and on the test (0.88).
+  That says the intentions generalise to new phrasings from someone in the
+  group. It does not say what an outside user would write: Roman knew the
+  labelling rules and the domain, which is exactly the bias a cross test
+  removes (TP3: a test written by the people who wrote the train flatters the
+  model).
+- Exact match falls from 0.83 (validation) to 0.60 (test). We expect an
+  outside test to land lower still, mostly on slot values and on messages that
+  sit between two intentions (view_bookings vs check_availability).
